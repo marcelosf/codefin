@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/Code/code-financeiro":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/Code/code-financeiro","hostpath":"F:/Estudos/projeto_laravel/code-financeiro","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"F:/Estudos/projeto_laravel/code-financeiro","disabled":false,"__vagrantfile":true}}}
