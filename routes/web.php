@@ -17,12 +17,17 @@ Route::get('/user', function (){
 
 });
 
+Route::get('/user-logout', function (){
+
+    Auth::logout();
+
+});
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
     Route::get('/home', function (){
 
@@ -31,8 +36,16 @@ Auth::routes();
     });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'can:access-admin', 'as' => 'admin.'], function (){
+Route::group(['prefix' => 'admin',  'as' => 'admin.'], function (){
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Auth::routes();
+
+    Route::group(['middleware' => 'can:access-admin'], function (){
+
+        Route::get('/home', 'HomeController@index')->name('home');
+
+    });
+
+
 
 });
