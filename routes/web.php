@@ -11,20 +11,28 @@
 |
 */
 
+Route::get('/user', function (){
+
+    \Illuminate\Support\Facades\Auth::loginUsingId(2);
+
+});
+
+
 Route::get('/', function () {
-//    \Illuminate\Support\Facades\Auth::loginUsingId(2);
-    if(\Illuminate\Support\Facades\Gate::allows('access-admin')){
-
-        return 'usuário com permissão de admin';
-
-    }else {
-
-        return 'usuário sem permissão de admin';
-
-    }
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+    Route::get('/home', function (){
+
+        return redirect()->route('admin.home');
+
+    });
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'can:access-admin', 'as' => 'admin.'], function (){
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});
