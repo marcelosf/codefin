@@ -12,6 +12,16 @@
 */
 
 Route::get('/', function () {
+//    \Illuminate\Support\Facades\Auth::loginUsingId(2);
+    if(\Illuminate\Support\Facades\Gate::allows('access-admin')){
+
+        return 'usuário com permissão de admin';
+
+    }else {
+
+        return 'usuário sem permissão de admin';
+
+    }
     return view('welcome');
 });
 
