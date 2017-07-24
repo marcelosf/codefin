@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/Code/codefin":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/Code/codefin","hostpath":"D:/cursos/code_education/codefin","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/cursos/code_education/codefin","disabled":false,"__vagrantfile":true}}}
